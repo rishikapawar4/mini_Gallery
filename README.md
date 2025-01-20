@@ -1,1 +1,1 @@
-# mini_Gallery
+# ScrollArt_Gallery
