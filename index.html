@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Gallery</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1 id="galleryHeading">Gallery</h1>
+
+    <div class="gallery-wrap">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSp7s02CINPCjWGEpqKlaTLS0bbBJwZciatKQ&s" id="backBtn">
+        <div class="gallery">
+            <div>
+                <span><img src="https://i.pinimg.com/236x/63/48/7d/63487dbcded5596291e9dcf922f3f9f0.jpg"></span>
+                <span><img src="https://i.pinimg.com/236x/c4/0c/fe/c40cfe1fdd143cdbfb3e714a6a29af00.jpg"></span>
+                <span><img src="https://i.pinimg.com/236x/22/1c/65/221c65539246e9dc003a974ea955640b.jpg"></span>
+                <span><img src="https://i.pinimg.com/474x/2e/ba/5e/2eba5e5245370661fd12fcae93e7c6ae.jpg"></span>
+            </div>
+            <div>
+                <span><img src="https://i.pinimg.com/236x/95/1f/fd/951ffd13dd9803caf5fe3596d8b70ae4.jpg"></span>
+                <span><img src="https://i.pinimg.com/236x/00/22/01/0022012a648a89a999ce827bb43d703a.jpg"></span>
+                <span><img src="https://i.pinimg.com/236x/b0/84/19/b08419b6ddf3d560d10a2b2b2e089489.jpg"></span>
+                <span><img src="https://i.pinimg.com/474x/71/44/d8/7144d899ca628a39fb7fca040d8d079a.jpg"></span>
+            </div>
+        </div>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0k4X5z5CTgLm4hDA3OJUXCE5r5xT0SIT0hf0HCUwasgs0J1pLR0l3bjXzMIlngYDEf4E&usqp=CAU" id="nextBtn">
+    </div>
+    <script>
+        let scrollContainer = document.querySelector(".gallery");
+        let backBtn = document.getElementById("backBtn");
+        let nextBtn = document.getElementById("nextBtn");
+
+        scrollContainer.addEventListener("wheel", (evt) => {
+            evt.preventDefault();
+            scrollContainer.style.scrollBehavior = "auto"; // Fix typo
+            scrollContainer.scrollLeft += evt.deltaY;
+        });
+
+        nextBtn.addEventListener("click", () => {
+            scrollContainer.style.scrollBehavior = "smooth"; // Fix typo
+            scrollContainer.scrollLeft += 900;
+        });
+
+        backBtn.addEventListener("click", () => {
+            scrollContainer.style.scrollBehavior = "smooth"; // Fix typo
+            scrollContainer.scrollLeft -= 900;
+        });
+    </script>
+</body>
+</html>
